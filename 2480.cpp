@@ -1,17 +1,11 @@
 #include<iostream>
 #include<algorithm>
-#include<vector>
 
 using namespace std;
 int main(){
-    int a,b,c;
-    vector<int> v1;
+    int a,b,c,max;
     cin >> a >> b >> c;
-    v1.push_back(a);
-    v1.push_back(b);
-    v1.push_back(c);
-    sort(v1.begin(),v1.end());
-    // a=b b=c a=c 
+    max = (a >= b && a >= c) ? a :(b >= a && b >= c) ? b : c;
     if(a==b==c){
         cout << 10000 + 1000 * a;
     }
@@ -22,7 +16,7 @@ int main(){
             else{ cout<< 1000 + a*100; }
         }
         else{
-            cout << v1.back() * 100;
+            cout << max * 100;
         }
     }
 }
